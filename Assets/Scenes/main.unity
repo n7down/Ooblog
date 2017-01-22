@@ -247,6 +247,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 702616119}
+  - 50: {fileID: 702616121}
+  - 61: {fileID: 702616120}
+  - 114: {fileID: 702616122}
   m_Layer: 0
   m_Name: Ooblog
   m_TagString: Untagged
@@ -261,13 +264,55 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 702616118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.48, y: -0.17, z: 0}
+  m_LocalPosition: {x: -2.48, y: 0.47, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2040574475}
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!61 &702616120
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 702616118}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.18}
+--- !u!50 &702616121
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 702616118}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &702616122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 702616118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0456ad8d07abf4188a9a66ad38ddabe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &764116890
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +321,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 764116891}
+  - 50: {fileID: 764116893}
+  - 61: {fileID: 764116892}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -290,13 +337,44 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 764116890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.017, y: 0.72, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1556152919}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!61 &764116892
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764116890}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.06, y: 0.23}
+--- !u!50 &764116893
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764116890}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1015501476
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +383,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1015501477}
+  - 50: {fileID: 1015501479}
+  - 61: {fileID: 1015501478}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -329,6 +409,37 @@ Transform:
   - {fileID: 264130336}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!61 &1015501478
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015501476}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0.27, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.72, y: 0.18}
+--- !u!50 &1015501479
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015501476}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1151771566
 GameObject:
   m_ObjectHideFlags: 0

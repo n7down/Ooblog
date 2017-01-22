@@ -21,7 +21,6 @@ public class BulletController : MonoBehaviour
 		upSprite = GameObject.Find("up");
 		downSprite = GameObject.Find("down");
 		downSprite.SetActive(false);
-		FireProjectile(1);
 		currentState = State.UP;
 	}
 
@@ -39,14 +38,26 @@ public class BulletController : MonoBehaviour
 		{
 			if (currentState == State.UP)
 			{
-				upSprite.SetActive(false);
-				downSprite.SetActive(true);
+				if (upSprite != null)
+				{
+					upSprite.SetActive(false);
+				}
+				if (downSprite != null)
+				{
+					downSprite.SetActive(true);
+				}
 				currentState = State.DOWN;
 			}
 			else
 			{
-				upSprite.SetActive(true);
-				downSprite.SetActive(false);
+				if(upSprite != null)
+				{
+					upSprite.SetActive(true);
+				}
+				if (downSprite != null)
+				{
+					downSprite.SetActive(false);
+				}
 				currentState = State.UP;
 			}
 			currentTime = 0.0f;
@@ -55,7 +66,6 @@ public class BulletController : MonoBehaviour
 		{
 			currentTime += Time.deltaTime;
 		}
-		Debug.Log("current time: " + currentTime);
 	}
 
 	public void FireProjectile(float direction)
@@ -67,6 +77,11 @@ public class BulletController : MonoBehaviour
 
 	public void OnCollisionEnter2D(Collision2D collision)
 	{
+		if (collision.gameObject.name == "Human")
+		{
+			HumanController humanController = collision.gameObject.GetComponent<HumanController>();
+			humanController.SetMindControlled();
+		}
 		Destroy(gameObject);
 	}
 }

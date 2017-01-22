@@ -18,6 +18,20 @@ public class HumanController : MonoBehaviour
 
 	public void Update () 
 	{
-	
+
+	}
+
+	public void SetMindControlled()
+	{		
+		if (currentState == State.MindControlled)
+		{
+			GameObject.Find("human").SetActive(false);
+			GameObject.Find("mind controlled human").SetActive(true);
+		}
+	}
+		
+	public void OnCollisionEnter2D(Collision2D collision)
+	{
+		
 	}
 }

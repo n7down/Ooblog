@@ -1,15 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraController : MonoBehaviour {
+public class CameraController : MonoBehaviour 
+{
+	private GameObject target;
+	private Vector3 offset;
 
-	// Use this for initialization
-	void Start () {
-	
+	public void Start() 
+	{
+		target = GameObject.Find("/Ooblog");
+		if (target != null)
+		{
+			offset = transform.position - target.transform.position;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public GameObject Target 
+	{ 
+		get 
+		{
+			return target;
+		}
+
+		set
+		{ 
+			target = value;
+			//			offset = transform.position - target.transform.position;
+		}
 	}
+
+	public void LateUpdate() 
+	{
+		if (target != null)
+		{
+			transform.position = target.transform.position + offset;
+		}
+	}
+
 }

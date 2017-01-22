@@ -5,7 +5,7 @@ public class OoblogController : MonoBehaviour
 {
 	private Rigidbody2D rigidBody2D;
 	private float movementSpeed;
-	private bool grounded;
+	public bool grounded;
 	private float jumpPower;
 	private Vector3 initialScale;
 

@@ -8,6 +8,7 @@ public class OoblogController : MonoBehaviour
 	public bool grounded;
 	private float jumpPower;
 	private Vector3 initialScale;
+	private Animator animator;
 
 	public void Start () 
 	{
@@ -16,6 +17,8 @@ public class OoblogController : MonoBehaviour
 		grounded = false;
 		jumpPower = 250.0f;
 		initialScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+		animator = GetComponent<Animator>();
+		GameObject.Find("placeholder").SetActive(false);
 	}
 
 	public void Update () 
@@ -24,6 +27,7 @@ public class OoblogController : MonoBehaviour
 		Vector2 newVelocity = GetComponent<Rigidbody2D>().velocity;
 		newVelocity.x = horizontalInput * movementSpeed * Time.deltaTime;
 		GetComponent<Rigidbody2D>().velocity = newVelocity;
+		animator.SetFloat("IsMoving", Mathf.Abs(horizontalInput));
 
 		if (grounded)
 		{
@@ -31,6 +35,7 @@ public class OoblogController : MonoBehaviour
 			{
 				rigidBody2D.AddForce(Vector2.up * jumpPower * Time.deltaTime, ForceMode2D.Impulse);
 				grounded = false;
+				animator.enabled = false;
 			}
 		}
 
@@ -48,6 +53,7 @@ public class OoblogController : MonoBehaviour
 		if (collisionGameObject.tag == "Platform")
 		{
 			grounded = true;
+			animator.enabled = true;
 		}
 	}
 }
